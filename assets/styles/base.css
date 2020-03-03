@@ -1,0 +1,296 @@
+:root {
+    font-family: "ITC Franklin Gothic Std", sans-serif;
+    background-color: #0B084D;
+    color: white;
+    font-size: 18px;
+    line-height: 1.5em;
+}
+
+a {
+    color: white;
+    text-decoration: unset;
+}
+
+h1, h2, h3, h4 {
+    font-family: "TeX Gyre Heros", sans-serif;
+}
+
+h1, h2 {
+    font-size: 2em;
+    line-height: 2em;
+    margin: unset;
+}
+
+button {
+    background: transparent;
+    border: 3px solid white;
+    color: white;
+    padding: 5px 10px;
+    font-size: 16px;
+    line-height: initial;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+p, span, li {
+
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    position: absolute;
+    width: 100%;
+}
+
+.green-text {
+    color: #7C9E57;
+}
+
+.header-logo {
+    padding: 0 20px;
+    margin: initial;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-logo img {
+    max-width: 100px;
+
+}
+
+.menu-toggle {
+    color: transparent;
+    overflow: hidden;
+    background-image: url("../images/Menu.svg");
+    background-position: center;
+    background-size: calc(100% - 40px);
+    background-repeat: no-repeat;
+    padding: 0 20px;
+    height: 100%;
+    width: 50px;
+}
+
+.menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    overflow: scroll;
+}
+
+.menu:target {
+    display: initial;
+}
+
+ol.menu-list {
+    counter-reset: menuList;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: unset;
+    margin: 100px 0;
+    font-weight: bold;
+}
+
+ol.menu-list > li {
+    list-style: none;
+    margin: 60px 0;
+    text-align: center;
+    position: relative;
+    font-size: 30px;
+}
+
+ol.menu-list > li:before {
+    counter-increment: menuList;
+    content: counter(menuList, decimal-leading-zero);
+    position: absolute;
+    top: -45px;
+    width: 100%;
+    font-size: 15px;
+}
+
+.menu .menu-toggle {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 60px;
+    background-image: url("../images/Menu.close.svg");
+}
+
+.menu-footer,
+footer nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+main > section {
+    padding: 20px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+main > section:first-child {
+    padding-top: 80px;
+}
+
+main > section:last-child {
+    padding-bottom: 20px;
+}
+
+#intro {
+    background: url("../images/Arrow.down.mobile.svg") no-repeat right 20px bottom 20px/25px;
+}
+
+#intro h1 {
+    margin-top: unset;
+}
+
+.intro-description {
+    max-width: calc(100% - 50px);
+    margin-top: 30px;
+    min-width: 250px;
+}
+
+main > section > div {
+    margin: 30px 0;
+}
+
+main > section > div:first-child {
+    margin-top: unset;
+}
+
+.progress-list {
+    padding: unset;
+}
+
+.progress-list > li {
+    list-style: none;
+}
+
+.progress-list > li > progress {
+    width: 100%;
+    margin-bottom: -10px;
+}
+
+.logo-slider {
+    padding: unset;
+    margin: unset;
+    display: flex;
+    justify-content: space-between;
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.logo-slider img {
+    height: 80px;
+    width: 100px;
+    margin: 0 10px;
+    scroll-snap-align: center;
+    object-fit: contain;
+}
+
+.custom-list-icons,
+.diamond-list-icons {
+    padding-left: unset;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.custom-list-icons > li,
+.diamond-list-icons > li {
+    list-style: none;
+
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+    line-height: 1.5em;
+}
+
+.custom-list-icons > li > *,
+.diamond-list-icons > li > * {
+    padding: 0;
+    margin: 0;
+}
+
+.custom-list-icons > li > hr,
+.diamond-list-icons > li > hr {
+    display: inline;
+    flex: 1;
+    border: none;
+    border-bottom: 1px dotted white;
+    margin-left: 5px;
+}
+
+.custom-list-icons > li:before,
+.diamond-list-icons > li:before {
+    content: attr(value);
+    color: #7C9E57;
+    display: inline-block;
+    width: 1em;
+    font-size: 1.5em;
+    line-height: 1.1em;
+    align-self: center;
+}
+
+.diamond-list-icons > li:before {
+    content: "◇";
+    font-size: 2.5em;
+    line-height: 0.8em;
+    width: 0.8em;
+}
+
+form {
+    background-color: #FEFEFE;
+    color: #0B084D;
+    padding: 30px 10px;
+}
+
+form h3:first-child {
+    margin-top: unset;
+}
+
+form input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #4D4D4D;
+    width: 100%;
+    margin: 10px 0;
+}
+
+form .columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+form .columns input {
+    width: 45%;
+}
+
+.centered-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: unset;
+}
+
+.contacts-email {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.contacts-copyright {
+    font-size: 0.5em;
+}
