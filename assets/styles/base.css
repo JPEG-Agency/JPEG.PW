@@ -205,7 +205,7 @@ main > section:last-child:before {
 }
 
 #intro {
-    background: url("../images/Arrow.down.mobile.svg") no-repeat right 20px bottom 20px/25px;
+    background: url("../images/Arrow.down.mobile.svg") no-repeat right 20px bottom 100px/20px;
 }
 
 #intro h1 {
