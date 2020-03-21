@@ -43,6 +43,22 @@ header {
     height: 60px;
     position: absolute;
     width: 100%;
+    z-index: 1;
+}
+
+header:before {
+    content: '';
+    width: 100vw;
+    height: 200px;
+    background-image: url("../images/bacground.black.svg");
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    margin-top: calc((200px / 2 - 70px) * -1);
+    /*margin-left: -20px;*/
+    z-index: -1;
+    pointer-events: none;
 }
 
 .green-text {
@@ -84,6 +100,7 @@ header {
     bottom: 0;
     background: black;
     overflow: scroll;
+    z-index: 2;
 }
 
 .menu:target {
@@ -133,18 +150,58 @@ footer nav {
 }
 
 main > section {
+    position: relative;
     padding: 20px;
-    padding-bottom: 80px;
+    padding-bottom: 200px;
     min-height: 100vh;
     box-sizing: border-box;
 }
 
 main > section:first-child {
     padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 main > section:last-child {
     padding-bottom: 20px;
+}
+
+main > section:after{
+    content: '';
+    width: 100vw;
+    height: 400px;
+    background-image: url("../images/bacground.blue.svg");
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    margin-top: calc((400px / 2 - 100px) * -1);
+    margin-left: -20px;
+    z-index: -2;
+    pointer-events: none;
+    top: 0;
+}
+
+main > section:first-child:after{
+    content: none;
+}
+
+main > section:last-child:after{
+    margin-top: calc((400px / 2 - 400px) * -1);
+}
+
+main > section:last-child:before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 150px;
+    background-image: url("../images/Arrow.down.mobile.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    right: 20px;
+    top: -150px;
 }
 
 #intro {
@@ -179,17 +236,59 @@ main > section > div:first-child {
 
 .progress-list > li > progress {
     width: 100%;
-    margin-bottom: -10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    height: 10px;
+    background: white;
+}
+
+.progress-list > li > progress::-webkit-progress-bar {
+    background: white;
+}
+
+.progress-list > li > progress::-webkit-progress-value {
+    background: #7C9E57;
+}
+
+.progress-list > li > ::-moz-progress-bar {
+    background: #7C9E57;
 }
 
 .logo-slider {
-    padding: unset;
-    margin: unset;
+    /*padding: unset;*/
+    /*margin: unset;*/
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     overflow: scroll;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+
+    width: 100vw;
+    margin: 0 -20px;
+    padding: 0 20px;
+}
+
+.logo-slider:before {
+    content: '';
+    width: 100vw;
+    height: 300px;
+    background-image: url("../images/bacground.black.svg");
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    margin-top: calc((300px / 2 - 80px / 2) * -1);
+    margin-left: -20px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.logo-slider:after {
+    content: ' ';
+    min-width: 20px;
 }
 
 .logo-slider img {
@@ -252,6 +351,10 @@ main > section > div:first-child {
 
 form {
     background-color: #FEFEFE;
+    background-image: url("../images/bacground.gray.svg");
+    background-position: center top;
+    background-size: 100%;
+    background-repeat: repeat-x;
     color: #0B084D;
     padding: 30px 10px;
 }
@@ -279,6 +382,26 @@ form .columns input {
     width: 45%;
 }
 
+form.decorated {
+    position: relative;
+    margin-top: 250px;
+}
+
+form.decorated:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: url("../images/Pizza.svg");
+    background-position: center right -40px;
+    background-size: 320px;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 100vw;
+    left: 0;
+    top: -300px;
+    margin-left: -20px;
+}
+
 .centered-block {
     display: flex;
     flex-direction: column;
@@ -293,4 +416,24 @@ form .columns input {
 
 .contacts-copyright {
     font-size: 0.5em;
+}
+
+footer{
+    position: relative;
+}
+
+footer:before {
+    content: '';
+    width: 100vw;
+    height: 200px;
+    background-image: url("../images/bacground.black.svg");
+    background-repeat: repeat-x;
+    background-position: center bottom -100px;
+    background-size: contain;
+    position: absolute;
+    /*margin-top: calc((200px / 2 - 70px) * -1);*/
+    /*margin-left: -20px;*/
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none;
 }
