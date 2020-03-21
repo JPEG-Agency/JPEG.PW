@@ -166,7 +166,7 @@ main > section:last-child {
     padding-bottom: 20px;
 }
 
-main > section:after{
+main > section:after {
     content: '';
     width: 100vw;
     height: 400px;
@@ -182,15 +182,15 @@ main > section:after{
     top: 0;
 }
 
-main > section:first-child:after{
+main > section:first-child:after {
     content: none;
 }
 
-main > section:last-child:after{
+main > section:last-child:after {
     margin-top: calc((400px / 2 - 400px) * -1);
 }
 
-main > section:last-child:before{
+main > section:last-child:before {
     content: '';
     display: block;
     position: absolute;
@@ -256,16 +256,9 @@ main > section > div:first-child {
     background: #7C9E57;
 }
 
-.logo-slider {
-    /*padding: unset;*/
-    /*margin: unset;*/
+.logo-slider,
+.logo-slider > div{
     box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    overflow: scroll;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-
     width: 100vw;
     margin: 0 -20px;
     padding: 0 20px;
@@ -286,7 +279,15 @@ main > section > div:first-child {
     pointer-events: none;
 }
 
-.logo-slider:after {
+.logo-slider > div {
+    display: flex;
+    justify-content: space-between;
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.logo-slider > div:after {
     content: ' ';
     min-width: 20px;
 }
@@ -344,9 +345,13 @@ main > section > div:first-child {
 
 .diamond-list-icons > li:before {
     content: "◇";
-    font-size: 2.5em;
+    /*font-size: 2.5em;
     line-height: 0.8em;
-    width: 0.8em;
+    width: 0.8em;*/
+
+    font-size: 2em;
+    line-height: 1em;
+    width: 1.2em;
 }
 
 form {
@@ -364,6 +369,11 @@ form h3:first-child {
 }
 
 form input {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: unset;
+    padding: 0;
     background: none;
     border: none;
     border-bottom: 1px solid #4D4D4D;
@@ -418,7 +428,7 @@ form.decorated:before {
     font-size: 0.5em;
 }
 
-footer{
+footer {
     position: relative;
 }
 
